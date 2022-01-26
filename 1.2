@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 25 18:47:19 2022
+
+@author: waleed
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+# a) Use a computer to plot the functions f1(x) = exp(x) and f2(x) = x 3.5 on the range 2 ≤ x ≤ 7.
+
+x = np.linspace(2,7,100)
+y1 = np.e**(x)
+y2 = x**(3.5)
+plt.figure(1)
+plt.plot(x,y1)
+plt.plot(x,y2)
+plt.xlabel('x -axis')
+plt.ylabel('y -axis')
+plt.title('Ploting f1(x) and f2(x)')
+plt.legend(('f1(x)', 'f2(x)'))
+
+# b) Semilogarithmic graphs of f1(x) and f2(x)
+
+plt.figure(2)
+plt.semilogy(x,y1)
+plt.semilogy(x,y2)
+plt.xlabel('x -axis')
+plt.ylabel('y -axis')
+plt.title('Semilogarithmic plots')
+plt.legend(('f1(x)', 'f2(x)'))
+
+# c) log-log plot:
+
+plt.figure(3)
+xlog = np.log(x)
+y1_log = np.log(y1)
+y2_log = np.log(y2)
+plt.plot(xlog,y1_log)
+plt.plot(xlog,y2_log)
+plt.xlabel('x -axis')
+plt.ylabel('y -axis')
+plt.title('log-log plots of f1(x) and f2(x)')
+plt.legend(('log-f1(x)', 'log-f2(x)'))
