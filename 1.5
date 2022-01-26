@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 25 19:31:34 2022
+
+@author: waleed
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+# a) Plotting the data points:
+    
+a=np.loadtxt('population.csv',delimiter=',')
+x=a[:,0]
+f=a[:,1]
+
+X = np.array(x)
+Y = np.array(f)
+plt.figure(1)
+plt.plot(X,Y)
+plt.title("Plot of csv data")
+
+# b) Graphing the given function:
+
+t = np.linspace(-10000,2005,1000)
+y = 100000/(2050-t)
+plt.figure(2)
+plt.plot(t,y)
+plt.xlabel('x -axis')
+plt.ylabel('y -axis')
+plt.title('Ploting f1(x) and f2(x)')
+
+fig, ((f1, f2), (f3, f4)) = plt.subplots(2, 2)
+
+
+y1 = 100000/(2300-t)
+f1.plot(t,y1)
+
+
+y2 = 125000/(2050-t)
+f2.plot(t,y2)
+
+
+y3 = 150000/(2500-t)
+f3.plot(t,y3)
+
+
+y4 = 175000/(3000-t)
+f4.plot(t,y4)
